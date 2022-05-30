@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class Test extends ConsumerStatefulWidget {
-  Test({Key? key}) : super(key: key);
+class StopWatch extends ConsumerStatefulWidget {
+  StopWatch({Key? key}) : super(key: key);
 
   @override
-  Teststate createState() => Teststate();
+  StopWatchstate createState() => StopWatchstate();
 }
 
-class Teststate extends ConsumerState<Test> {
+class StopWatchstate extends ConsumerState<StopWatch> {
   final isWaitingProvider = StateProvider(((ref) => false));
   // final startTimeProvider = StateProvider<double>(((ref) => 60));
   var start = 60;
@@ -24,14 +24,14 @@ class Teststate extends ConsumerState<Test> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'StopWatch',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         leading: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             )),
@@ -54,10 +54,10 @@ class Teststate extends ConsumerState<Test> {
                 arcType: ArcType.FULL,
                 center: Text(
                   wait ? start.toString() : 'Done',
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.white, fontWeight: FontWeight.w700),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             GestureDetector(
@@ -78,7 +78,7 @@ class Teststate extends ConsumerState<Test> {
                 child: Center(
                   child: Text(
                     wait ? '---' : 'start',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
               ),
